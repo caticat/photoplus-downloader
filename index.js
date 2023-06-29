@@ -73,6 +73,8 @@ const downloadAllImages = (list, dir) => {
   list.forEach((item) => {
     const url = `https:${item.origin_img}`;
     const fileName = url.split('/').pop().split('#')[0].split('?')[0];
+	// 这里添加打印信息可以使用其他下载工具下载
+	// console.log(url)
     sendArr.push(downloadImage(url, `${dir}/${fileName}`));
   });
   axios.all(sendArr);
